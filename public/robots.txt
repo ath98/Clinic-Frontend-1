@@ -1,0 +1,31 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.thesmileos.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Allow all search engines to access all content
+Disallow:
+
+# Block access to admin areas (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow access to CSS and JS files
+Allow: /css/
+Allow: /js/
+Allow: /assets/
+Allow: /images/
+
+# Block access to temporary files
+Disallow: /*.tmp$
+Disallow: /*.log$
+
+# Allow access to favicon and manifest files
+Allow: /favicon.ico
+Allow: /robots.txt
+Allow: /sitemap.xml
+Allow: /manifest.json

@@ -50,16 +50,14 @@ export const PageLoader: React.FC<PageLoaderProps> = ({
   return <div className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-white transition-opacity duration-500 ${isExiting ? 'opacity-0' : 'opacity-100'}`}>
       <div className="flex flex-col items-center">
         {/* Logo animation */}
-        <div className="mb-8 relative">
+        <div className="mb-8">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="The Smile OS Logo" className="h-12 w-auto" />
+            <img src={logo} alt="Smile OS Logo" className="h-12 w-auto" />
             <div className="text-4xl font-bold text-blue-600 relative">
-              The Smile OS
+              Smile OS
               <span className="absolute -top-1 -right-2 w-2 h-2 bg-blue-600 rounded-full animate-ping"></span>
             </div>
           </div>
-          {/* Rotating ring */}
-          <div className="absolute inset-0 -m-3 border-4 border-t-blue-500 border-r-transparent border-b-transparent border-l-transparent rounded-full animate-spin"></div>
         </div>
         {/* Progress bar */}
         <div className="w-64 h-1.5 bg-gray-200 rounded-full overflow-hidden">

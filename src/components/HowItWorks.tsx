@@ -25,9 +25,9 @@ export const HowItWorks: React.FC = () => {
           </p>
         </ScrollReveal>
       </div>
-      <div className="flex flex-col md:flex-row justify-center items-start gap-8">
+      <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-8">
         {steps.map((step, index) => <ScrollReveal key={index} animation="zoom-in" delay={index * 200}>
-            <div className="flex-1 text-center max-w-xs mx-auto">
+            <div className="flex-1 text-center max-w-xs mx-auto w-full">
               <div className="relative">
                 <div className="mx-auto w-20 h-20 flex items-center justify-center bg-blue-100 rounded-full mb-6 transform transition-transform duration-500 hover:scale-110 hover:shadow-lg">
                   {step.icon}

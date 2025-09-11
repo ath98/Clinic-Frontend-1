@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { ScrollReveal } from './ScrollReveal';
+import { useFAQTracking } from '../hooks/useAnalytics';
 export const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const faqs = [{
-    question: 'Can Smile OS manage multiple clinic locations?',
-    answer: 'Yes, Smile OS is designed to support multi-clinic operations. Our Growth and Custom plans allow you to manage multiple locations from a single dashboard with role-based access control for staff at different locations.'
+    question: 'What features does Smile OS offer for clinic management?',
+    answer: 'Smile OS provides comprehensive clinic management features including patient records, appointment scheduling, billing, inventory management, and staff coordination. Our Growth and Custom plans offer advanced features with role-based access control for different staff members.'
   }, {
     question: 'Who owns the data entered into Smile OS?',
     answer: 'Your clinic owns all the data you enter into Smile OS. We do not sell or share your data with third parties. You can export your data at any time, and we provide tools to help you comply with data protection regulations.'
@@ -13,20 +14,30 @@ export const FAQ: React.FC = () => {
     question: 'Do I need my own WhatsApp Business number?',
     answer: "Yes, you'll need a WhatsApp Business API account to use our WhatsApp integration features. We can guide you through the process of setting this up, or you can use your existing WhatsApp Business number if you already have one."
   }, {
-    question: 'What happens if I cancel my subscription?',
-    answer: "If you cancel your subscription, you'll maintain access to your account until the end of your billing cycle. After that, you'll have 30 days to export your data before it's deleted from our systems. We make the transition process as smooth as possible."
-  }, {
     question: 'How long does it take to set up Smile OS for my clinic?',
     answer: 'Most clinics are up and running with Smile OS within 1-2 days. Our onboarding process is designed to be simple, and our team provides assistance with initial setup, data migration, and staff training to ensure a smooth transition.'
   }, {
     question: 'What kind of support does Smile OS offer?',
-    answer: 'All plans include standard support via email and in-app chat. Our Growth and Custom plans include priority support with faster response times. Custom plans can also include dedicated support personnel for larger clinic networks.'
+    answer: 'All plans include standard support via email and in-app chat. Our Growth and Custom plans include priority support with faster response times. Custom plans can also include dedicated support personnel for comprehensive clinic management needs.'
   }, {
     question: 'Can I migrate data from my existing system?',
     answer: 'Yes, we offer data migration services to help you transition from your current system. Our team will work with you to import patient records, appointment history, and other essential data to ensure a smooth transition with minimal disruption to your practice.'
   }];
   const toggleFaq = (index: number) => {
+    const faq = faqs[index];
+    const isOpening = openIndex !== index;
+    
     setOpenIndex(openIndex === index ? null : index);
+    
+    // Track FAQ interaction
+    if (faq) {
+      const { handleFAQOpen, handleFAQClose } = useFAQTracking(faq.question);
+      if (isOpening) {
+        handleFAQOpen();
+      } else {
+        handleFAQClose();
+      }
+    }
   };
   return <div className="container mx-auto px-4">
       <div className="text-center mb-12">
@@ -68,18 +79,30 @@ export const FAQ: React.FC = () => {
       </div>
       {/* Schema.org FAQ markup */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{
-      __html: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: faqs.map(faq => ({
-          '@type': 'Question',
-          name: faq.question,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: faq.answer
+        __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          name: 'Frequently Asked Questions - Smile OS Dental Clinic Management Software',
+          description: 'Common questions about Smile OS dental clinic management software, pricing, features, and implementation.',
+          mainEntity: faqs.map(faq => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: faq.answer
+            }
+          })),
+          about: {
+            '@type': 'SoftwareApplication',
+            name: 'Smile OS',
+            description: 'Dental clinic management software'
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: 'The Smile OS',
+            url: 'https://www.thesmileos.com'
           }
-        }))
-      })
-    }} />
+        })
+      }} />
     </div>;
 };

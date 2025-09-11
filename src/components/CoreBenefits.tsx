@@ -1,5 +1,5 @@
 import React from 'react';
-import { Clock, Bell, CreditCard, Users } from 'lucide-react';
+import { Clock, Bell, CreditCard, Heart } from 'lucide-react';
 import { ScrollReveal, ScrollRevealGroup } from './ScrollReveal';
 export const CoreBenefits: React.FC = () => {
   const benefits = [{
@@ -15,9 +15,9 @@ export const CoreBenefits: React.FC = () => {
     title: 'Billing that just works',
     description: 'No more manual billing. Generate invoices and track payments with our comprehensive billing system. '
   }, {
-    icon: <Users size={36} className="text-blue-600" />,
-    title: 'Multi-clinic ready',
-    description: 'Manage multiple locations with role-based access control for doctors, staff, and administrators.'
+    icon: <Heart size={36} className="text-blue-600" />,
+    title: 'Happier Patients',
+    description: 'Improved patient experience with faster check-ins, automated reminders, and seamless communication leads to higher satisfaction.'
   }];
   return <div className="container mx-auto px-4">
       <ScrollReveal animation="slide-up">

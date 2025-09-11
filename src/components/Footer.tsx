@@ -1,13 +1,6 @@
 import React from 'react';
-import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
-interface FooterProps {
-  showPrivacy: () => void;
-  showTerms: () => void;
-}
-export const Footer: React.FC<FooterProps> = ({
-  showPrivacy,
-  showTerms
-}) => {
+import { Facebook, Instagram, Linkedin } from 'lucide-react';
+export const Footer: React.FC = () => {
   return <footer className="bg-gray-900 text-white pt-12 pb-6">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -20,9 +13,6 @@ export const Footer: React.FC<FooterProps> = ({
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-blue-300 transition-colors transform hover:scale-110">
                 <Facebook size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-blue-300 transition-colors transform hover:scale-110">
-                <Twitter size={20} />
               </a>
               <a href="#" className="text-gray-400 hover:text-blue-300 transition-colors transform hover:scale-110">
                 <Instagram size={20} />
@@ -61,8 +51,8 @@ export const Footer: React.FC<FooterProps> = ({
             </h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 inline-block transform">
-                  Blog
+                <a href="#modules" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 inline-block transform">
+                  How It Works
                 </a>
               </li>
               <li>
@@ -71,13 +61,13 @@ export const Footer: React.FC<FooterProps> = ({
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 inline-block transform">
-                  Support
+                <a href="mailto:sales@thesmileos.com" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 inline-block transform">
+                  Get Support
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 inline-block transform">
-                  Documentation
+                <a href="#contact" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 inline-block transform">
+                  Book Demo
                 </a>
               </li>
             </ul>
@@ -98,14 +88,14 @@ export const Footer: React.FC<FooterProps> = ({
                 </a>
               </li>
               <li>
-                <button onClick={showPrivacy} className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 inline-block transform">
+                <a href="#privacy-policy" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 inline-block transform">
                   Privacy Policy
-                </button>
+                </a>
               </li>
               <li>
-                <button onClick={showTerms} className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 inline-block transform">
+                <a href="#terms-conditions" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 inline-block transform">
                   Terms & Conditions
-                </button>
+                </a>
               </li>
             </ul>
           </div>
@@ -129,7 +119,7 @@ export const Footer: React.FC<FooterProps> = ({
             contactType: 'customer service',
             availableLanguage: ['English', 'Hindi']
           },
-          sameAs: ['https://www.facebook.com/thesmileos', 'https://www.twitter.com/thesmileos', 'https://www.linkedin.com/company/thesmileos', 'https://www.instagram.com/thesmileos']
+          sameAs: ['https://www.facebook.com/thesmileos', 'https://www.linkedin.com/company/thesmileos', 'https://www.instagram.com/thesmileos']
         })
       }} />
       </div>

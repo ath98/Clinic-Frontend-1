@@ -3,27 +3,27 @@ import { Check } from 'lucide-react';
 import { ScrollReveal } from './ScrollReveal';
 export const Pricing: React.FC = () => {
   const plans = [{
-    name: 'Starter',
-    price: '₹8,299',
-    period: 'per clinic / month',
+    name: 'Starter Plan',
+    price: '₹25,000',
+    period: '/-',
     description: 'Perfect for single clinics just getting started',
-    features: ['Appointment scheduling', 'Patient management', 'Basic billing', 'Email notifications', '1 clinic location', 'Up to 3 staff accounts'],
+    features: ['Modern, responsive design (up to 5 pages)', 'Mobile-friendly & fast loading', 'Basic SEO (titles, meta tags, sitemap)', 'Integrated CTA form', '2 Changes Per year'],
     cta: 'Start Free Trial',
     popular: false
   }, {
-    name: 'Growth',
-    price: '₹16,599',
-    period: 'per clinic / month',
+    name: 'Growth Plan',
+    price: '₹30,000',
+    period: '/-',
     description: 'For established clinics looking to optimize operations',
-    features: ['Everything in Starter', 'WhatsApp automation', 'Advanced reporting', 'Inventory management', 'Voice journal', 'Unlimited staff accounts'],
+    features: ['Website analytics & visitor tracking', 'Google Maps & WhatsApp integration', 'Optimized image & speed performance', 'SSL setup', '4 Revisions Per Year'],
     cta: 'Start Free Trial',
     popular: true
   }, {
-    name: 'Custom',
-    price: 'Contact Us',
-    period: 'for pricing',
-    description: 'For multi-clinic networks with custom requirements',
-    features: ['Everything in Growth', 'Multi-clinic management', 'Custom integrations', 'Dedicated support', 'Custom reporting', 'Priority feature requests'],
+    name: 'Pro Plan',
+    price: '₹35,000',
+    period: '/-',
+    description: 'For clinic networks with custom requirements',
+    features: ['Advanced SEO (keyword optimization, schema, on-page strategy)', 'Landing pages for campaigns (unlimited)', 'Performance monitoring & security hardening', '6 Revisions Per Year'],
     cta: 'Contact Sales',
     popular: false
   }];
