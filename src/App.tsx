@@ -18,6 +18,7 @@ import { Footer } from './components/Footer';
 import { StickyCallToAction, FloatingCTA } from './components/StickyCallToAction';
 
 import { PageLoader } from './components/PageLoader';
+import { CookieConsent } from './components/CookieConsent';
 export function App() {
   const [showPrivacy, setShowPrivacy] = useState(false);
   const [showTerms, setShowTerms] = useState(false);
@@ -117,6 +118,9 @@ export function App() {
         <StickyCallToAction threshold={800} />
         {/* Desktop Floating CTA */}
         <FloatingCTA />
+        
+        {/* Cookie Consent Banner */}
+        <CookieConsent />
         {/* Modal for Privacy Policy */}
         {showPrivacy && <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 animate-fade-in">
             <div className="bg-white rounded-lg p-6 max-w-4xl max-h-[90vh] overflow-y-auto animate-zoom-in">
@@ -188,18 +192,25 @@ export function App() {
                 {/* Section 3 */}
                 <div className="mb-8">
                   <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-blue-500">
-                    <h2 className="text-2xl font-bold text-gray-900 mb-4">3. Third-Party Services</h2>
-                    <p className="text-gray-700 mb-4 leading-7">We may use third-party services such as:</p>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-4">3. Third-Party Services and Data Sharing</h2>
+                    <p className="text-gray-700 mb-4 leading-7">We use the following third-party services that may collect and process your data:</p>
                     <div className="grid gap-3">
                       <div className="bg-white p-4 rounded-lg border border-gray-200">
-                        <p className="text-gray-700">Website analytics providers (e.g., Google Analytics).</p>
+                        <p className="text-gray-700"><span className="font-semibold text-blue-700">Google Analytics 4:</span> We use Google Analytics to understand website usage, visitor behavior, and improve our services. Google Analytics collects information such as:</p>
+                        <ul className="list-disc list-inside mt-2 text-sm text-gray-600">
+                          <li>Pages visited and time spent on pages</li>
+                          <li>Device and browser information</li>
+                          <li>IP address (anonymized)</li>
+                          <li>Referral sources and search terms</li>
+                        </ul>
+                        <p className="text-sm text-gray-600 mt-2">This data is processed by Google according to their Privacy Policy. You can opt-out using Google's opt-out browser add-on or by disabling cookies in your browser.</p>
                       </div>
                       <div className="bg-white p-4 rounded-lg border border-gray-200">
-                        <p className="text-gray-700">Email service providers for newsletter delivery.</p>
+                        <p className="text-gray-700"><span className="font-semibold text-blue-700">Email Service Providers:</span> We use third-party email services for newsletter delivery and communication.</p>
                       </div>
                     </div>
                     <p className="text-gray-700 mt-4 leading-7">
-                      These third parties are bound by privacy obligations and are prohibited from using data for purposes other than providing services.
+                      <span className="font-semibold">Data Sharing:</span> We do not sell your personal information. However, we may share data with these third-party service providers as necessary to operate our website and provide services. These providers are bound by their own privacy policies and contractual obligations.
                     </p>
                   </div>
                 </div>
@@ -217,19 +228,45 @@ export function App() {
                 {/* Section 5 */}
                 <div className="mb-8">
                   <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-blue-500">
-                    <h2 className="text-2xl font-bold text-gray-900 mb-4">5. Your Choices</h2>
-                    <p className="text-gray-700 leading-7">
-                      You may opt-out of receiving newsletters or promotional emails at any time by clicking the unsubscribe link provided in emails.
-                    </p>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-4">5. Your Choices and Rights</h2>
+                    <p className="text-gray-700 mb-4 leading-7">You have the following choices regarding your data:</p>
+                    <div className="grid gap-3">
+                      <div className="bg-white p-4 rounded-lg border border-gray-200">
+                        <p className="text-gray-700"><span className="font-semibold text-blue-700">Google Analytics Opt-out:</span> You can opt-out of Google Analytics tracking by:</p>
+                        <ul className="list-disc list-inside mt-2 text-sm text-gray-600">
+                          <li>Installing the Google Analytics opt-out browser add-on</li>
+                          <li>Disabling cookies in your browser settings</li>
+                          <li>Using browser extensions that block tracking</li>
+                        </ul>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg border border-gray-200">
+                        <p className="text-gray-700"><span className="font-semibold text-blue-700">Email Communications:</span> You may opt-out of receiving newsletters or promotional emails at any time by clicking the unsubscribe link provided in emails.</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg border border-gray-200">
+                        <p className="text-gray-700"><span className="font-semibold text-blue-700">Data Access:</span> You can request information about the data we have collected about you by contacting us at info@thesmileos.com.</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 
                 {/* Section 6 */}
                 <div className="mb-8">
                   <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-blue-500">
-                    <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Links to Other Sites</h2>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Cookies and Tracking Technologies</h2>
+                    <p className="text-gray-700 mb-4 leading-7">We use cookies and similar tracking technologies to:</p>
+                    <div className="grid gap-3 mb-4">
+                      <div className="bg-white p-4 rounded-lg border border-gray-200">
+                        <p className="text-gray-700">Analyze website traffic and user behavior through Google Analytics</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg border border-gray-200">
+                        <p className="text-gray-700">Remember your preferences and improve user experience</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg border border-gray-200">
+                        <p className="text-gray-700">Track form submissions and website interactions</p>
+                      </div>
+                    </div>
                     <p className="text-gray-700 leading-7">
-                      Our website may contain links to third-party websites. We are not responsible for their privacy practices and recommend reviewing their policies before sharing personal information.
+                      You can control cookies through your browser settings. However, disabling cookies may affect the functionality of our website.
                     </p>
                   </div>
                 </div>
@@ -237,9 +274,9 @@ export function App() {
                 {/* Section 7 */}
                 <div className="mb-8">
                   <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-blue-500">
-                    <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Children's Privacy</h2>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Links to Other Sites</h2>
                     <p className="text-gray-700 leading-7">
-                      Our website is not intended for children under 13. We do not knowingly collect personal information from minors.
+                      Our website may contain links to third-party websites. We are not responsible for their privacy practices and recommend reviewing their policies before sharing personal information.
                     </p>
                   </div>
                 </div>
@@ -247,7 +284,17 @@ export function App() {
                 {/* Section 8 */}
                 <div className="mb-8">
                   <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-blue-500">
-                    <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Changes to This Policy</h2>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Children's Privacy</h2>
+                    <p className="text-gray-700 leading-7">
+                      Our website is not intended for children under 13. We do not knowingly collect personal information from minors.
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Section 9 */}
+                <div className="mb-8">
+                  <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-blue-500">
+                    <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Changes to This Policy</h2>
                     <p className="text-gray-700 leading-7">
                       We may update this policy periodically. Updates will be posted on this page with a revised effective date.
                     </p>

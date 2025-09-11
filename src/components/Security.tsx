@@ -50,8 +50,9 @@ export const Security: React.FC = () => {
               <p className="text-gray-700">
                 We believe in complete data ownership. Your clinic's data
                 belongs to you, and you can export it at any time. We never sell
-                your data or use it for purposes other than providing our
-                service.
+                your clinic data to third parties. We only use your data to provide
+                our service and may share limited analytics data with trusted
+                service providers as outlined in our Privacy Policy.
               </p>
             </div>
             <div className="md:w-1/3 text-center">

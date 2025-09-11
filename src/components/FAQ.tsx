@@ -9,7 +9,7 @@ export const FAQ: React.FC = () => {
     answer: 'Smile OS provides comprehensive clinic management features including patient records, appointment scheduling, billing, inventory management, and staff coordination. Our Growth and Custom plans offer advanced features with role-based access control for different staff members.'
   }, {
     question: 'Who owns the data entered into Smile OS?',
-    answer: 'Your clinic owns all the data you enter into Smile OS. We do not sell or share your data with third parties. You can export your data at any time, and we provide tools to help you comply with data protection regulations.'
+    answer: 'Your clinic owns all the data you enter into Smile OS. We do not sell your clinic data to third parties. We may share limited analytics data with trusted service providers (like Google Analytics) as outlined in our Privacy Policy. You can export your data at any time, and we provide tools to help you comply with data protection regulations.'
   }, {
     question: 'Do I need my own WhatsApp Business number?',
     answer: "Yes, you'll need a WhatsApp Business API account to use our WhatsApp integration features. We can guide you through the process of setting this up, or you can use your existing WhatsApp Business number if you already have one."

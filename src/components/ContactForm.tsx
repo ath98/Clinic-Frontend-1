@@ -39,8 +39,8 @@ export const ContactForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Validate form
-    if (!formData.name || !formData.email) {
+    // Validate form - all fields are now required
+    if (!formData.name || !formData.email || !formData.clinicName || !formData.phone) {
       setFormStatus({
         submitted: true,
         error: true,
@@ -63,10 +63,10 @@ export const ContactForm: React.FC = () => {
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
-        clinic_name: formData.clinicName || 'Not provided',
-        phone: formData.phone || 'Not provided',
+        clinic_name: formData.clinicName,
+        phone: formData.phone,
         to_email: EMAILJS_CONFIG.BUSINESS_EMAIL,
-        message: `New demo request from ${formData.name} at ${formData.clinicName || 'Unknown clinic'}. Contact: ${formData.email}, Phone: ${formData.phone || 'Not provided'}`
+        message: `New demo request from ${formData.name} at ${formData.clinicName}. Contact: ${formData.email}, Phone: ${formData.phone}`
       };
 
       // Send email using EmailJS
@@ -189,9 +189,12 @@ export const ContactForm: React.FC = () => {
                       Request another demo
                     </button>
                   </div> : <form onSubmit={handleSubmit}>
-                    <h3 className="text-xl font-bold mb-6 text-blue-900">
+                    <h3 className="text-xl font-bold mb-2 text-blue-900">
                       Book your free demo
                     </h3>
+                    <p className="text-sm text-gray-600 mb-6">
+                      All fields are required to schedule your personalized demo.
+                    </p>
                     <div className="grid grid-cols-1 gap-5">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
@@ -207,15 +210,15 @@ export const ContactForm: React.FC = () => {
                       </div>
                       <div>
                         <label htmlFor="clinicName" className="block text-sm font-medium text-gray-700 mb-1">
-                          Clinic Name
+                          Clinic Name *
                         </label>
-                        <input type="text" id="clinicName" name="clinicName" value={formData.clinicName} onChange={handleChange} className="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300" />
+                        <input type="text" id="clinicName" name="clinicName" value={formData.clinicName} onChange={handleChange} className="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300" required />
                       </div>
                       <div>
                         <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                          Phone/WhatsApp
+                          Phone/WhatsApp *
                         </label>
-                        <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} className="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300" />
+                        <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} className="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300" required />
                       </div>
                       {formStatus.error && <div className="text-red-500 animate-fade-in">
                           {formStatus.message}
@@ -241,7 +244,7 @@ export const ContactForm: React.FC = () => {
                         <div className="flex items-center justify-center mt-3 gap-1.5 text-xs text-gray-500">
                           <Lock size={12} />
                           <span>
-                            Your information is secure and will never be shared
+                            Your information is secure and protected according to our Privacy Policy
                           </span>
                         </div>
                       </div>
