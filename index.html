@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <meta name="theme-color" content="#2563eb" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="googlebot" content="index, follow" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow" />
+    <meta name="slurp" content="index, follow" />
     
     <!-- Primary Meta Tags -->
-    <title>Smile OS - #1 Dental Clinic Management Software | Practice Management System</title>
-    <meta name="title" content="Smile OS - #1 Dental Clinic Management Software | Practice Management System" />
-    <meta name="description" content="Transform your dental practice with Smile OS - the leading clinic management software. Reduce no-shows by 40%, save 10+ hours weekly with appointment scheduling, billing, and patient communication tools. Start your 120-day free trial today." />
+    <title>Smile OS - Dental Clinic Management Software | India</title>
+    <meta name="title" content="Smile OS - Dental Clinic Management Software | India" />
+    <meta name="description" content="Leading dental clinic management software in India. Reduce no-shows by 40%, save 10+ hours weekly. Free trial available." />
     <meta name="keywords" content="dental clinic management software, dental practice management, dentist software, clinic management system, dental appointment scheduling, dental billing software, patient management system, dental practice automation, clinic workflow software, dental office management, practice management software, dental clinic software India, dental practice solutions, clinic management platform, dental office automation" />
     <meta name="author" content="The Smile OS" />
     <meta name="publisher" content="The Smile OS" />
@@ -18,6 +20,11 @@
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.thesmileos.com" />
+    
+    <!-- Hreflang Tags -->
+    <link rel="alternate" hreflang="en-in" href="https://www.thesmileos.com" />
+    <link rel="alternate" hreflang="en" href="https://www.thesmileos.com" />
+    <link rel="alternate" hreflang="x-default" href="https://www.thesmileos.com" />
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -56,20 +63,38 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DV0TPBYB5F"></script>
+    <!-- Resource Hints for Better Performance -->
+    <link rel="preload" href="/assets/hero-image-tUc0CR2_.webp" as="image" type="image/webp" />
+    <link rel="preload" href="/assets/logo-BHOvkS7t.png" as="image" type="image/png" />
+    
+    <!-- Google Analytics 4 - Optimized Loading -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'GA_MEASUREMENT_ID', {
-        page_title: 'Smile OS - Dental Clinic Management Software',
-        page_location: window.location.href,
-        custom_map: {
-          'custom_parameter_1': 'dental_software',
-          'custom_parameter_2': 'clinic_management'
-        }
+      // Load GA4 asynchronously after page load
+      window.addEventListener('load', function() {
+        // Load GA4 script
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-DV0TPBYB5F';
+        document.head.appendChild(script);
+        
+        // Initialize GA4 after script loads
+        script.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', 'G-DV0TPBYB5F', {
+            page_title: 'Smile OS - Dental Clinic Management Software',
+            page_location: window.location.href,
+            send_page_view: true,
+            custom_map: {
+              'custom_parameter_1': 'dental_software',
+              'custom_parameter_2': 'clinic_management'
+            }
+          });
+        };
       });
     </script>
     
@@ -128,8 +153,8 @@
       ]
     }
     </script>
-    <script type="module" crossorigin src="/assets/index-vYGWtMdF.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-xcfhX7A1.css">
+    <script type="module" crossorigin src="/assets/index-Crvjx087.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CP7tAmWu.css">
   </head>
   <body>
     <div id="root"></div>
