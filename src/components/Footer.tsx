@@ -11,13 +11,13 @@ export const Footer: React.FC = () => {
               practices.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-blue-300 transition-colors transform hover:scale-110">
+              <a href="https://www.facebook.com/people/Smile-OS/61581045715217/" target='_blank' className="text-gray-400 hover:text-blue-300 transition-colors transform hover:scale-110">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-300 transition-colors transform hover:scale-110">
+              <a href="https://www.instagram.com/_smile_os_/" target='_blank' className="text-gray-400 hover:text-blue-300 transition-colors transform hover:scale-110">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-300 transition-colors transform hover:scale-110">
+              <a href="https://www.linkedin.com/company/smile-os" target='_blank' className="text-gray-400 hover:text-blue-300 transition-colors transform hover:scale-110">
                 <Linkedin size={20} />
               </a>
             </div>
@@ -119,9 +119,9 @@ export const Footer: React.FC = () => {
             contactType: 'customer service',
             availableLanguage: ['English', 'Hindi']
           },
-          sameAs: ['https://www.facebook.com/people/Smile-OS/61581045715217/', 'https://www.linkedin.com/company/thesmileos', 'https://www.instagram.com/thesmileos']
+          sameAs: ['https://www.facebook.com/people/Smile-OS/61581045715217/', 'https://www.linkedin.com/company/smile-os', 'https://www.instagram.com/_smile_os_/']
         })
       }} />
       </div>
     </footer>;
-};
+}; 
