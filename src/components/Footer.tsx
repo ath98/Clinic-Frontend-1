@@ -119,7 +119,7 @@ export const Footer: React.FC = () => {
             contactType: 'customer service',
             availableLanguage: ['English', 'Hindi']
           },
-          sameAs: ['https://www.facebook.com/thesmileos', 'https://www.linkedin.com/company/thesmileos', 'https://www.instagram.com/thesmileos']
+          sameAs: ['https://www.facebook.com/people/Smile-OS/61581045715217/', 'https://www.linkedin.com/company/thesmileos', 'https://www.instagram.com/thesmileos']
         })
       }} />
       </div>

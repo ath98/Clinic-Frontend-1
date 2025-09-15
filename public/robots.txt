@@ -1,31 +1,55 @@
+# Robots.txt for Smile OS - Dental Clinic Management Software
+# https://www.thesmileos.com
+
+# Allow all search engines to crawl the entire site
 User-agent: *
 Allow: /
 
-# Sitemap
+# Sitemap location
 Sitemap: https://www.thesmileos.com/sitemap.xml
 
-# Crawl-delay for respectful crawling
+# Specific instructions for major search engines
+User-agent: Googlebot
+Allow: /
 Crawl-delay: 1
 
-# Allow all search engines to access all content
-Disallow:
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
 
-# Block access to admin areas (if any)
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Block access to admin areas (if any exist)
 Disallow: /admin/
 Disallow: /private/
+Disallow: /api/
 
-# Allow access to CSS and JS files
-Allow: /css/
-Allow: /js/
-Allow: /assets/
-Allow: /images/
-
-# Block access to temporary files
+# Block access to temporary and system files
 Disallow: /*.tmp$
 Disallow: /*.log$
+Disallow: /*.json$
+Disallow: /node_modules/
+Disallow: /.git/
 
-# Allow access to favicon and manifest files
+# Allow access to important files for SEO
 Allow: /favicon.ico
 Allow: /robots.txt
 Allow: /sitemap.xml
-Allow: /manifest.json
+Allow: /site.webmanifest
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.webp
+Allow: /*.svg

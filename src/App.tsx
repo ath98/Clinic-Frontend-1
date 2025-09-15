@@ -19,9 +19,14 @@ import { StickyCallToAction, FloatingCTA } from './components/StickyCallToAction
 
 import { PageLoader } from './components/PageLoader';
 import { CookieConsent } from './components/CookieConsent';
+import { LazyComponent } from './components/LazyComponent';
+import { usePerformance } from './hooks/usePerformance';
 export function App() {
   const [showPrivacy, setShowPrivacy] = useState(false);
   const [showTerms, setShowTerms] = useState(false);
+  
+  // Performance monitoring
+  usePerformance();
 
   // Handle URL hash changes for privacy policy and terms
   useEffect(() => {
@@ -76,20 +81,28 @@ export function App() {
           <section id="benefits" aria-label="Core benefits and features" className="py-16 bg-blue-50/50">
             <CoreBenefits />
           </section>
-          <section id="modules" aria-label="Product modules and features" className="py-16">
-            <ProductModules />
-          </section>
+          <LazyComponent>
+            <section id="modules" aria-label="Product modules and features" className="py-16">
+              <ProductModules />
+            </section>
+          </LazyComponent>
 
-          <section id="how-it-works" aria-label="How the software works" className="py-16 bg-blue-50/50">
-            <HowItWorks />
-          </section>
+          <LazyComponent>
+            <section id="how-it-works" aria-label="How the software works" className="py-16 bg-blue-50/50">
+              <HowItWorks />
+            </section>
+          </LazyComponent>
 
-          <section id="security" aria-label="Security and compliance features" className="py-16 bg-blue-50/50">
-            <Security />
-          </section>
-          <section id="pricing" aria-label="Pricing plans and packages" className="py-16">
-            <Pricing />
-          </section>
+          <LazyComponent>
+            <section id="security" aria-label="Security and compliance features" className="py-16 bg-blue-50/50">
+              <Security />
+            </section>
+          </LazyComponent>
+          <LazyComponent>
+            <section id="pricing" aria-label="Pricing plans and packages" className="py-16">
+              <Pricing />
+            </section>
+          </LazyComponent>
           {/* <section id="lead-magnet" aria-label="Free resource" className="py-16 bg-white">
             <div className="container mx-auto px-4 max-w-4xl">
               <LeadMagnet />
@@ -98,15 +111,21 @@ export function App() {
           {/* <section id="testimonials" aria-label="Customer testimonials" className="py-16 bg-blue-50/50">
             <Testimonials />
           </section> */}
-          <section id="faq" aria-label="Frequently asked questions" className="py-16">
-            <FAQ />
-          </section>
-          <section id="cta" aria-label="Call to action" className="py-16 bg-blue-600 text-white">
-            <CTABand />
-          </section>
-          <section id="contact" aria-label="Contact form and demo request" className="py-16">
-            <ContactForm />
-          </section>
+          <LazyComponent>
+            <section id="faq" aria-label="Frequently asked questions" className="py-16">
+              <FAQ />
+            </section>
+          </LazyComponent>
+          <LazyComponent>
+            <section id="cta" aria-label="Call to action" className="py-16 bg-blue-600 text-white">
+              <CTABand />
+            </section>
+          </LazyComponent>
+          <LazyComponent>
+            <section id="contact" aria-label="Contact form and demo request" className="py-16">
+              <ContactForm />
+            </section>
+          </LazyComponent>
         </main>
         
         {/* Footer */}

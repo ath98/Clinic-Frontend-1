@@ -3,6 +3,22 @@
 
 export const GA_MEASUREMENT_ID = 'G-DV0TPBYB5F'; // Replace with your actual GA4 ID
 
+// Performance-optimized GA4 configuration
+export const GA_CONFIG = {
+  send_page_view: true,
+  page_title: document.title,
+  page_location: window.location.href,
+  custom_map: {
+    'custom_parameter_1': 'dental_software',
+    'custom_parameter_2': 'clinic_management'
+  },
+  // Performance optimizations
+  transport_type: 'beacon',
+  use_amp_client_id: false,
+  allow_google_signals: false,
+  allow_ad_personalization_signals: false
+};
+
 // Custom event tracking functions
 export const trackEvent = (eventName: string, parameters?: Record<string, any>) => {
   if (typeof window !== 'undefined' && window.gtag) {

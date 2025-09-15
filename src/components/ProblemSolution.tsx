@@ -25,10 +25,22 @@ export const ProblemSolution: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6">
             The hidden costs of manual clinic management
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             Traditional clinic management wastes time, loses revenue, and creates security risks. 
             See how modern clinics are transforming their operations with Smile OS.
           </p>
+          <div className="bg-blue-50 rounded-lg p-6 max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-blue-900 mb-4">The Real Cost of Inefficient Clinic Management</h3>
+            <p className="text-gray-700 mb-4">
+              Indian dental clinics face unique challenges in managing their practice efficiently. From handling appointment cancellations 
+              to managing patient records and billing, the administrative burden often takes away precious time that should be spent on patient care.
+            </p>
+            <p className="text-gray-700">
+              Our research shows that clinics using outdated management systems lose an average of ₹12,500 per no-show appointment, 
+              while staff members spend 3-4 hours daily on administrative tasks that could be automated. This not only impacts revenue 
+              but also affects the quality of patient care and staff satisfaction.
+            </p>
+          </div>
         </div>
       </ScrollReveal>
       
